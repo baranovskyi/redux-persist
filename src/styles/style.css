@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+.membersCart {
+  width: 500px;
+  border: 1px solid #000;
+  text-align: center;
+}
+.memberList {
+  list-style: none;
+  text-align: left;
+  padding-right: 15px;
+}
+.memberList li {
+  margin-bottom: 10px;
+}
+.memberList li span {
+  font-weight: bold;
+}
+.memberList input {
+  float: right;
+  border: none;
+  background-color: #240082;
+  color: white;
+  cursor: pointer;
+  width: 60px;
+  height: 20px;
+  margin: 0;
+}
+.btnAdd {
+  border: none;
+  background-color: #240082;
+  color: white;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
