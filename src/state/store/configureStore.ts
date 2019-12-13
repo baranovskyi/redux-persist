@@ -15,14 +15,13 @@ declare const window: Window & {
 
 const SetTransform = createTransform<any, any>(
   state => {
-    const regPattert = /member-\d*/;
-    const keys = Object.keys(state).filter((word: string) => {
-      if (regPattert.test(word)) {
-        return word;
+    const regPattert = /^member-\d+$/;
+    const keys = Object.keys(state).filter((key: string) => {
+      if (regPattert.test(key)) {
+        return key;
       }
     });
     const arrKeys = ["ids", ...keys];
-    console.log(arrKeys);
     return pick(state, arrKeys);
   },
   (outboundState, key) => {
