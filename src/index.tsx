@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import Members from "./components/Members";
-import { createStore } from "redux";
-import reducer from "./state/reducers/reducer";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "./state/store/configureStore";
