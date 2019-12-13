@@ -8,7 +8,6 @@ class List extends React.Component<{
 }> {
   deleteMember = (e: FormEvent<HTMLInputElement>) => {
     this.props.deleteMember(Number(e.currentTarget.id));
-    // console.log(Number(e.currentTarget.id));
   };
 
   render() {

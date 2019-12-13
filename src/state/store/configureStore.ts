@@ -3,7 +3,6 @@ import { persistStore, persistReducer } from "redux-persist";
 import { createTransform } from "redux-persist";
 import storageSession from "redux-persist/lib/storage/session";
 import reducer from "../reducers/reducer";
-import { Members, AppState } from "../model/types";
 import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
 import pick from "lodash-es/pick";
 declare const window: Window & {
