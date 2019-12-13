@@ -41,7 +41,7 @@ const SetTransform = createTransform<any, any>(
 const persistConfig: any = {
   key: "root",
   storage: storageSession,
-  transform: [SetTransform],
+  transforms: [SetTransform],
   stateReconciler: autoMergeLevel2
 };
 

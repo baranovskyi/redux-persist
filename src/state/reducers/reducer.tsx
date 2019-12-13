@@ -8,9 +8,6 @@ const initialState = {
       lastName: "bez"
     },
     ids: []
-  },
-  other: {
-    name: "als;dk;"
   }
 };
 
