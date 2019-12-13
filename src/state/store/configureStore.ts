@@ -15,16 +15,17 @@ declare const window: Window & {
 
 const SetTransform = createTransform<any, any>(
   state => {
-    const arrKeys = ["ids"];
-    state.ids.filter((item: number) => {
-      if (Object.keys(state[`member-${item}`])) {
-        arrKeys.push(`member-${item}`);
+    const regPattert = /member-\d*/;
+    const keys = Object.keys(state).filter((word: string) => {
+      if (regPattert.test(word)) {
+        return word;
       }
     });
+    const arrKeys = ["ids", ...keys];
+    console.log(arrKeys);
     return pick(state, arrKeys);
   },
   (outboundState, key) => {
-    // convert mySet back to a Set.
     return { ...outboundState };
   },
   { whitelist: ["members"] }
