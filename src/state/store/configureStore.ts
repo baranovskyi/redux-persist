@@ -14,28 +14,20 @@ declare const window: Window & {
 };
 
 const SetTransform = createTransform<any, any>(
-  // transform state on its way to being serialized and persisted.
-  (state, key) => {
-    console.log(state);
-    console.log("key: ", key);
-
-    function filterMembers(state: Members): Array<string> {
-      let arrKeys: Array<string> = ["ids"];
-      if (state.ids) {
-        state.ids.filter((item: number) => {
-          if (Object.keys(state[`member-${item}`])) {
-            arrKeys.push(`member-${item}`);
-          }
-        });
+  state => {
+    const arrKeys = ["ids"];
+    state.ids.filter((item: number) => {
+      if (Object.keys(state[`member-${item}`])) {
+        arrKeys.push(`member-${item}`);
       }
-      return arrKeys;
-    }
-    let newState = pick(state, filterMembers(state));
-    return { ...newState };
+    });
+    return pick(state, arrKeys);
   },
-  (state, key) => {
-    return { ...state };
-  }
+  (outboundState, key) => {
+    // convert mySet back to a Set.
+    return { ...outboundState };
+  },
+  { whitelist: ["members"] }
 );
 
 const persistConfig: any = {
