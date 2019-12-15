@@ -4,6 +4,7 @@ import { mapStateToProps, mapDispatchToProps } from "./container";
 import "../styles/style.css";
 class List extends React.Component<{
   allMembers: { ids: number[]; [key: string]: any };
+  ids: number[];
   deleteMember: (id: number) => void;
 }> {
   deleteMember = (e: FormEvent<HTMLInputElement>) => {
@@ -13,7 +14,7 @@ class List extends React.Component<{
   render() {
     return (
       <ul className="memberList">
-        {this.props.allMembers.ids.map((i: number, index: number) => {
+        {this.props.ids.map((i: number, index: number) => {
           return (
             <li key={index}>
               {i} <span>First name:</span>{" "}
