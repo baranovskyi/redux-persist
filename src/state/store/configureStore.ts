@@ -12,7 +12,7 @@ declare const window: Window & {
   ): (...args: any[]) => R;
 };
 
-const SetTransform = createTransform<any, any>(
+const SetTransform = createTransform<string, any>(
   state => {
     const regPattert = /^member-\d+$/;
     const keys = Object.keys(state).filter((key: string) => {
